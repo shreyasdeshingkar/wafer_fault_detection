@@ -1,0 +1,31 @@
+[ 2025-04-07 14:13:59,924 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-04-07 14:13:59,927 ] 97 werkzeug - INFO -  * Debugger PIN: 212-446-784
+[ 2025-04-07 14:14:05,842 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 14:14:05] "GET / HTTP/1.1" 200 -
+[ 2025-04-07 14:14:12,574 ] 28 root - INFO - Entered initiate_data_ingestion method of DataIngestion class
+[ 2025-04-07 14:14:16,715 ] 35 root - INFO - Exported collection as dataframe
+[ 2025-04-07 14:14:16,841 ] 53 root - INFO - Ingested data from mongodb to artifacts\data.csv
+[ 2025-04-07 14:14:16,841 ] 57 root - INFO - Exited initiate_data_ingestion method of DataIngestion class
+[ 2025-04-07 14:14:16,841 ] 49 root - INFO - Reading train and test CSV files...
+[ 2025-04-07 14:14:16,869 ] 53 root - INFO - Train shape: (160, 591), Test shape: (40, 591)
+[ 2025-04-07 14:14:16,869 ] 54 root - INFO - Getting preprocessor object...
+[ 2025-04-07 14:14:16,869 ] 28 root - INFO - Creating data transformer pipeline...
+[ 2025-04-07 14:14:16,869 ] 60 root - INFO - Splitting input and target features...
+[ 2025-04-07 14:14:16,869 ] 67 root - INFO - Target value counts (train):
+[ 2025-04-07 14:14:16,882 ] 68 root - INFO - Good/Bad
+-1.0    148
+ 1.0     12
+Name: count, dtype: int64
+[ 2025-04-07 14:14:16,882 ] 70 root - INFO - Applying preprocessor transformations...
+[ 2025-04-07 14:14:16,929 ] 77 root - INFO - Cleaning NaNs from training and testing data...
+[ 2025-04-07 14:14:16,931 ] 92 root - ERROR - Training data is empty after cleaning.
+[ 2025-04-07 14:14:16,931 ] 93 root - ERROR - Train input shape before drop: (160, 590)
+[ 2025-04-07 14:14:16,931 ] 94 root - ERROR - Train input shape after drop: (0, 590)
+[ 2025-04-07 14:14:16,932 ] 95 root - ERROR - Original target counts: Good/Bad
+-1.0    148
+ 1.0     12
+Name: count, dtype: int64
+[ 2025-04-07 14:14:16,932 ] 96 root - ERROR - Mapped target null count: 0
+[ 2025-04-07 14:14:16,936 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 14:14:16] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[ 2025-04-07 14:14:17,010 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 14:14:17] "[36mGET /train?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[ 2025-04-07 14:14:17,291 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 14:14:17] "[36mGET /train?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[ 2025-04-07 14:14:17,625 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 14:14:17] "GET /train?__debugger__=yes&cmd=resource&f=console.png&s=JiFR0DBnbWOP1ddyF12S HTTP/1.1" 200 -

@@ -1,0 +1,3 @@
+[ 2025-04-06 22:52:42,405 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-04-06 22:52:42,407 ] 97 werkzeug - INFO -  * Debugger PIN: 212-446-784
+[ 2025-04-06 22:52:45,196 ] 97 werkzeug - INFO - 127.0.0.1 - - [06/Apr/2025 22:52:45] "GET / HTTP/1.1" 200 -

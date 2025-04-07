@@ -4,12 +4,10 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
-from imblearn.combine import SMOTETomek    # FOR HANDLING IMBALANCED DATA
+from imblearn.combine import SMOTETomek
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import RobustScaler, FunctionTransformer
+from sklearn.preprocessing import RobustScaler, FunctionTransformer ,OneHotEncoder, StandardScaler
 from sklearn.pipeline import Pipeline
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 from src.exception import CustomException
 from src.logger import logging
@@ -28,7 +26,6 @@ class DataTransformation:
 
     def get_data_transformer_object(self):
         try:
-            
             # define custom function to replace 'NA' with np.nan
             replace_na_with_nan = lambda X: np.where(X == 'na', np.nan, X)
 
@@ -39,9 +36,9 @@ class DataTransformation:
 
             preprocessor = Pipeline(
                 steps=[
-                nan_replacement_step,
-                imputer_step,
-                scaler_step
+                    nan_replacement_step,
+                    imputer_step,
+                    scaler_step
                 ]
             )
             
@@ -50,33 +47,34 @@ class DataTransformation:
         except Exception as e:
             raise CustomException(e, sys)
 
-
-
     def initiate_data_transformation(self, train_path, test_path):
         try:
             train_df = pd.read_csv(train_path)
-
             test_df = pd.read_csv(test_path)
- 
-            preprocessor = self.get_data_transformer_object()
+
+            logging.info(f"Train DataFrame Columns: {train_df.columns.tolist()}")
+            logging.info(f"Test DataFrame Columns: {test_df.columns.tolist()}")
 
             target_column_name = "Good/Bad"
+            if target_column_name not in train_df.columns or target_column_name not in test_df.columns:
+                raise CustomException(f"Target column '{target_column_name}' not found in dataset columns. Available columns: {train_df.columns.tolist()}", sys)
+
+            preprocessor = self.get_data_transformer_object()
+
             target_column_mapping = {'+1': 0, '-1': 1}
 
-            #training dataframe
+            # training dataframe
             input_feature_train_df = train_df.drop(columns=[target_column_name], axis=1)
             target_feature_train_df = train_df[target_column_name].map(target_column_mapping)
 
-            #testing dataframe
+            # testing dataframe
             input_feature_test_df = test_df.drop(columns=[target_column_name], axis=1)
             target_feature_test_df = test_df[target_column_name].map(target_column_mapping)
 
             transformed_input_train_feature = preprocessor.fit_transform(input_feature_train_df)
-
-            transformed_input_test_feature =preprocessor.transform(input_feature_test_df)
+            transformed_input_test_feature = preprocessor.transform(input_feature_test_df)
 
             smt = SMOTETomek(sampling_strategy="minority")
-            
 
             input_feature_train_final, target_feature_train_final = smt.fit_resample(
                 transformed_input_train_feature, target_feature_train_df
@@ -86,14 +84,13 @@ class DataTransformation:
                 transformed_input_test_feature, target_feature_test_df
             )
 
-            train_arr = np.c_[input_feature_train_final, np.array(target_feature_train_final) ]
-            test_arr = np.c_[ input_feature_test_final, np.array(target_feature_test_final) ]
+            train_arr = np.c_[input_feature_train_final, np.array(target_feature_train_final)]
+            test_arr = np.c_[input_feature_test_final, np.array(target_feature_test_final)]
 
-            save_object(self.data_transformation_config.preprocessor_obj_file_path,
-                        obj= preprocessor)
+            save_object(self.data_transformation_config.preprocessor_obj_file_path, obj=preprocessor)
 
             return (
-                train_arr,          # SAVED TO THE TRAINING PIPELINE
+                train_arr,
                 test_arr,
                 self.data_transformation_config.preprocessor_obj_file_path,
             )

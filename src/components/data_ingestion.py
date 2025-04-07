@@ -11,7 +11,7 @@ from src.logger import logging
 from src.utils import export_collection_as_dataframe
 
 
-@dataclass
+@dataclass   #(As constructor , there is no need to initialize __init__ method)
 class DataIngestionConfig:
     train_data_path: str = os.path.join("artifacts", "train.csv")
 
@@ -57,7 +57,7 @@ class DataIngestion:
             logging.info("Exited initiate_data_ingestion method of DataIngestion class")
 
             return (
-                self.ingestion_config.train_data_path,    # stored in the train pipeline
+                self.ingestion_config.train_data_path,    # stored or returned in the train pipeline
                 self.ingestion_config.test_data_path,
             )
 

@@ -1,0 +1,17 @@
+[ 2025-04-06 23:13:29,160 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-04-06 23:13:29,165 ] 97 werkzeug - INFO -  * Debugger PIN: 212-446-784
+[ 2025-04-06 23:13:33,188 ] 97 werkzeug - INFO - 127.0.0.1 - - [06/Apr/2025 23:13:33] "GET / HTTP/1.1" 200 -
+[ 2025-04-06 23:13:33,751 ] 97 werkzeug - INFO - 127.0.0.1 - - [06/Apr/2025 23:13:33] "GET / HTTP/1.1" 200 -
+[ 2025-04-06 23:13:34,988 ] 97 werkzeug - INFO - 127.0.0.1 - - [06/Apr/2025 23:13:34] "GET / HTTP/1.1" 200 -
+[ 2025-04-06 23:13:35,173 ] 97 werkzeug - INFO - 127.0.0.1 - - [06/Apr/2025 23:13:35] "GET / HTTP/1.1" 200 -
+[ 2025-04-06 23:13:35,565 ] 97 werkzeug - INFO - 127.0.0.1 - - [06/Apr/2025 23:13:35] "GET / HTTP/1.1" 200 -
+[ 2025-04-06 23:13:35,704 ] 97 werkzeug - INFO - 127.0.0.1 - - [06/Apr/2025 23:13:35] "GET / HTTP/1.1" 200 -
+[ 2025-04-06 23:13:35,884 ] 97 werkzeug - INFO - 127.0.0.1 - - [06/Apr/2025 23:13:35] "GET / HTTP/1.1" 200 -
+[ 2025-04-06 23:13:43,293 ] 28 root - INFO - Entered initiate_data_ingestion method of DataIngestion class
+[ 2025-04-06 23:13:46,933 ] 35 root - INFO - Exported collection as dataframe
+[ 2025-04-06 23:13:47,051 ] 53 root - INFO - Ingested data from mongodb to artifacts\data.csv
+[ 2025-04-06 23:13:47,051 ] 57 root - INFO - Exited initiate_data_ingestion method of DataIngestion class
+[ 2025-04-06 23:13:47,150 ] 97 werkzeug - INFO - 127.0.0.1 - - [06/Apr/2025 23:13:47] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[ 2025-04-06 23:13:47,247 ] 97 werkzeug - INFO - 127.0.0.1 - - [06/Apr/2025 23:13:47] "[36mGET /train?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[ 2025-04-06 23:13:47,248 ] 97 werkzeug - INFO - 127.0.0.1 - - [06/Apr/2025 23:13:47] "[36mGET /train?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[ 2025-04-06 23:13:47,568 ] 97 werkzeug - INFO - 127.0.0.1 - - [06/Apr/2025 23:13:47] "GET /train?__debugger__=yes&cmd=resource&f=console.png&s=GE5V99vDKv8GsuKnye9Q HTTP/1.1" 200 -

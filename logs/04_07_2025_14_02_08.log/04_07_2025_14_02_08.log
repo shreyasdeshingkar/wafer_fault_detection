@@ -1,0 +1,14 @@
+[ 2025-04-07 14:02:11,206 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-04-07 14:02:11,206 ] 97 werkzeug - INFO -  * Debugger PIN: 212-446-784
+[ 2025-04-07 14:02:11,852 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 14:02:11] "GET / HTTP/1.1" 200 -
+[ 2025-04-07 14:02:12,604 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 14:02:12] "GET / HTTP/1.1" 200 -
+[ 2025-04-07 14:02:13,317 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 14:02:13] "GET / HTTP/1.1" 200 -
+[ 2025-04-07 14:02:19,814 ] 28 root - INFO - Entered initiate_data_ingestion method of DataIngestion class
+[ 2025-04-07 14:02:22,145 ] 35 root - INFO - Exported collection as dataframe
+[ 2025-04-07 14:02:22,366 ] 53 root - INFO - Ingested data from mongodb to artifacts\data.csv
+[ 2025-04-07 14:02:22,371 ] 57 root - INFO - Exited initiate_data_ingestion method of DataIngestion class
+[ 2025-04-07 14:02:22,548 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 14:02:22] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[ 2025-04-07 14:02:22,651 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 14:02:22] "[36mGET /train?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[ 2025-04-07 14:02:22,899 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 14:02:22] "[36mGET /train?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[ 2025-04-07 14:02:23,229 ] 97 werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 14:02:23] "GET /train?__debugger__=yes&cmd=resource&f=console.png&s=tT48mjvVxDJcuztSxSgb HTTP/1.1" 200 -
+[ 2025-04-07 14:04:01,788 ] 97 werkzeug - INFO -  * Detected change in 'D:\\Wafer_fault_detection\\src\\exception.py', reloading

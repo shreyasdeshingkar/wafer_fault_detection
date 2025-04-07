@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return jsonify("home")
+    return "Welcome to my app"
 
 
 @app.route("/train")
