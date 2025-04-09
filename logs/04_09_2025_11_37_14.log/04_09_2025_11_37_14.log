@@ -1,0 +1,12 @@
+[ 2025-04-09 11:37:15,962 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-04-09 11:37:15,965 ] 97 werkzeug - INFO -  * Debugger PIN: 212-446-784
+[ 2025-04-09 11:37:25,533 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:37:25] "GET /predict HTTP/1.1" 200 -
+[ 2025-04-09 11:37:25,616 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:37:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+[ 2025-04-09 11:37:25,790 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:37:25] "[33mGET /script.js HTTP/1.1[0m" 404 -
+[ 2025-04-09 11:37:28,428 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:37:28] "GET /predict HTTP/1.1" 200 -
+[ 2025-04-09 11:37:28,453 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:37:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+[ 2025-04-09 11:37:28,677 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:37:28] "[33mGET /script.js HTTP/1.1[0m" 404 -
+[ 2025-04-09 11:37:50,798 ] 104 root - INFO - predictions completed. 
+[ 2025-04-09 11:37:50,798 ] 40 root - INFO - prediction completed. Downloading prediction file.
+[ 2025-04-09 11:37:50,807 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:37:50] "POST /predict HTTP/1.1" 200 -
+[ 2025-04-09 11:40:47,406 ] 97 werkzeug - INFO -  * Detected change in 'D:\\Wafer_fault_detection\\src\\pipeline\\predict_pipeline.py', reloading

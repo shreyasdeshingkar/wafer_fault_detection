@@ -12,10 +12,12 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from xgboost import XGBClassifier
 
+from build.lib.src.utils import evaluate_models, load_object, save_object, upload_file
 from src.constant import *
 from src.exception import CustomException
 from src.logger import logging
 from src.utils import evaluate_models, load_object, save_object, upload_file
+
 
 
 @dataclass

@@ -1,0 +1,12 @@
+[ 2025-04-09 11:32:53,543 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-04-09 11:32:53,545 ] 97 werkzeug - INFO -  * Debugger PIN: 212-446-784
+[ 2025-04-09 11:33:08,651 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:33:08] "GET /predict HTTP/1.1" 200 -
+[ 2025-04-09 11:33:08,714 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:33:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+[ 2025-04-09 11:33:08,983 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:33:08] "[33mGET /script.js HTTP/1.1[0m" 404 -
+[ 2025-04-09 11:33:10,047 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:33:10] "GET /predict HTTP/1.1" 200 -
+[ 2025-04-09 11:33:10,067 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:33:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+[ 2025-04-09 11:33:10,311 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:33:10] "[33mGET /script.js HTTP/1.1[0m" 404 -
+[ 2025-04-09 11:33:19,517 ] 104 root - INFO - predictions completed. 
+[ 2025-04-09 11:33:19,518 ] 40 root - INFO - prediction completed. Downloading prediction file.
+[ 2025-04-09 11:33:19,529 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2025 11:33:19] "POST /predict HTTP/1.1" 200 -
+[ 2025-04-09 11:37:03,298 ] 97 werkzeug - INFO -  * Detected change in 'D:\\Wafer_fault_detection\\src\\components\\data_transformation.py', reloading

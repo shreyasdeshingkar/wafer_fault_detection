@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Welcome to my app"
+    return "Welcome to my application"
 
 
 @app.route("/train")
@@ -24,14 +24,17 @@ def train_route():
     except Exception as e:
         raise CustomException(e,sys)
 
-@app.route('/upload', methods=['POST', 'GET'])
+@app.route('/predict', methods=['POST', 'GET'])
 def upload():
     
     try:
 
 
         if request.method == 'POST':
+            # it is a object of prediction pipeline
             prediction_pipeline = PredictionPipeline(request)
+            
+            #now we are running this run pipeline method
             prediction_file_detail = prediction_pipeline.run_pipeline()
 
             lg.info("prediction completed. Downloading prediction file.")

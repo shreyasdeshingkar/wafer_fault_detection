@@ -5,10 +5,11 @@ from dataclasses import dataclass
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
+from src.utils import *
 from src.constant import *
 from src.exception import CustomException
 from src.logger import logging
-from src.utils import export_collection_as_dataframe
+from src.utils import *
 
 
 @dataclass   #(As constructor , there is no need to initialize __init__ method)

@@ -1,0 +1,11 @@
+[ 2025-04-08 23:15:40,805 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-04-08 23:15:40,807 ] 97 werkzeug - INFO -  * Debugger PIN: 212-446-784
+[ 2025-04-08 23:15:44,699 ] 97 werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 23:15:44] "GET / HTTP/1.1" 200 -
+[ 2025-04-08 23:15:45,203 ] 97 werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 23:15:45] "GET / HTTP/1.1" 200 -
+[ 2025-04-08 23:15:45,352 ] 97 werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 23:15:45] "GET / HTTP/1.1" 200 -
+[ 2025-04-08 23:15:48,646 ] 29 root - INFO - Entered initiate_data_ingestion method of DataIngestion class
+[ 2025-04-08 23:16:18,737 ] 97 werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 23:16:18] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[ 2025-04-08 23:16:18,804 ] 97 werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 23:16:18] "[36mGET /train?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[ 2025-04-08 23:16:19,083 ] 97 werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 23:16:19] "[36mGET /train?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[ 2025-04-08 23:16:19,415 ] 97 werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 23:16:19] "GET /train?__debugger__=yes&cmd=resource&f=console.png&s=vBsOLjVNNAquHteAF2lm HTTP/1.1" 200 -
+[ 2025-04-08 23:18:03,580 ] 97 werkzeug - INFO -  * Detected change in 'D:\\Wafer_fault_detection\\src\\utils.py', reloading

@@ -1,0 +1,8 @@
+[ 2025-04-08 22:54:26,863 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-04-08 22:54:26,866 ] 97 werkzeug - INFO -  * Debugger PIN: 212-446-784
+[ 2025-04-08 22:54:34,848 ] 29 root - INFO - Entered initiate_data_ingestion method of DataIngestion class
+[ 2025-04-08 22:55:05,302 ] 97 werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 22:55:05] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[ 2025-04-08 22:55:05,409 ] 97 werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 22:55:05] "[36mGET /train?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[ 2025-04-08 22:55:05,409 ] 97 werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 22:55:05] "[36mGET /train?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[ 2025-04-08 22:55:05,735 ] 97 werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 22:55:05] "GET /train?__debugger__=yes&cmd=resource&f=console.png&s=zHwEC2uSJ8QvC7d0ScKd HTTP/1.1" 200 -
+[ 2025-04-08 22:55:05,983 ] 97 werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 22:55:05] "[36mGET /train?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -

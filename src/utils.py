@@ -10,6 +10,7 @@ from pymongo import MongoClient
 
 from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
+from src.constant import *
 
 
 from src.exception import CustomException
@@ -17,13 +18,12 @@ from src.exception import CustomException
 
 def export_collection_as_dataframe(collection_name, db_name):
     try:
-        #uniform resourse identifier
         uri = "mongodb+srv://shreyasdeshingkar:Shreyas123@cluster0.zj3ek.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
         # Create a new client and connect to the server
-        mongo_client = MongoClient(uri)
+        client = MongoClient(uri)
 
-        collection = mongo_client[db_name][collection_name]
+        collection = client[MONGO_DATABASE_NAME][MONGO_COLLECTION_NAME]
 
         df = pd.DataFrame(list(collection.find()))
 
@@ -37,7 +37,7 @@ def export_collection_as_dataframe(collection_name, db_name):
     except Exception as e:
         raise CustomException(e, sys)
 
-# Converting our model to the pickle file using dumping 
+
 def save_object(file_path, obj):
     try:
         dir_path = os.path.dirname(file_path)
@@ -80,6 +80,7 @@ def download_model(bucket_name, bucket_file_name, dest_file_name):
 
     except Exception as e:
         raise CustomException(e, sys)
+
 
 
 
