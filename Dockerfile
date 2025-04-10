@@ -9,6 +9,7 @@ COPY . .
 # Install build tools and dependencies for common Python packages
 RUN apk add --no-cache \
     build-base \
+    cmake \               
     libffi-dev \
     musl-dev \
     gcc \
@@ -22,6 +23,7 @@ RUN apk add --no-cache \
     freetype-dev \
     lapack-dev \
     && pip install --no-cache-dir -r requirements.txt
+
 
 # Command to run the app
 CMD ["python3", "app.py"]
