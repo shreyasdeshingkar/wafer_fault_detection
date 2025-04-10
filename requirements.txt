@@ -1,3 +1,5 @@
+nvidia-pyindex
+nvidia-nccl-cu12
 pandas 
 numpy
 flask
