@@ -27,4 +27,4 @@ wincertstore
 xgboost
 neuro-mf
 boto3
-yaml
+PyYAML
