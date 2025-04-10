@@ -9,7 +9,7 @@ COPY . .
 # Install build tools and dependencies for common Python packages
 RUN apk add --no-cache \
     build-base \
-    cmake \               
+    cmake \
     libffi-dev \
     musl-dev \
     gcc \
@@ -22,8 +22,9 @@ RUN apk add --no-cache \
     openblas-dev \
     freetype-dev \
     lapack-dev \
+    && pip install --upgrade pip \
+    && pip install nvidia-pyindex \
+    && pip install nvidia-nccl-cu12 \
     && pip install --no-cache-dir -r requirements.txt
-
-
 # Command to run the app
 CMD ["python3", "app.py"]
