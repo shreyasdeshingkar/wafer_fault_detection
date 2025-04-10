@@ -1,12 +1,13 @@
-FROM python:3.13.3-alpine
+# Use a stable base image
+FROM python:3.10-alpine
 
 # Set working directory
 WORKDIR /app
 
-# Copy source code
+# Copy local project files to the container
 COPY . .
 
-# Install build tools and dependencies for common Python packages
+# Install system dependencies
 RUN apk add --no-cache \
     build-base \
     cmake \
@@ -21,10 +22,12 @@ RUN apk add --no-cache \
     postgresql-dev \
     openblas-dev \
     freetype-dev \
-    lapack-dev \
-    && pip install --upgrade pip \
-    && pip install nvidia-pyindex \
-    && pip install nvidia-nccl-cu12 \
+    lapack-dev
+
+# Upgrade pip and install requirements
+RUN pip install --upgrade pip \
+    && pip install --extra-index-url https://pypi.nvidia.com nvidia-nccl-cu12 \
     && pip install --no-cache-dir -r requirements.txt
-# Command to run the app
-CMD ["python3", "app.py"]
+
+# Set the command to run your app (replace this as needed)
+CMD ["python", "app.py"]
