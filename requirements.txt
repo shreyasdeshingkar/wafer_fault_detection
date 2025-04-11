@@ -1,4 +1,4 @@
-nvidia-nccl-cu12
+- nvidia-nccl-cu12
 pandas 
 numpy
 flask
