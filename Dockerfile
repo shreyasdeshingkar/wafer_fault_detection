@@ -22,6 +22,4 @@ RUN apk add --no-cache \
 
 # Upgrade pip, install NVIDIA index first, then install other dependencies
 RUN pip install --upgrade pip \
-    && pip install nvidia-pyindex \
-    && pip install nvidia-nccl-cu12 \
     && pip install --no-cache-dir -r requirements.txt
