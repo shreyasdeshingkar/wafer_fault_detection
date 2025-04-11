@@ -24,7 +24,7 @@ uvicorn
 watchfiles
 websockets
 wincertstore
-xgboost
+xgboost==1.7.6
 neuro-mf
 boto3
 PyYAML
