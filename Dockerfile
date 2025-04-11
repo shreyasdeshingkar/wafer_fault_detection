@@ -1,25 +1,22 @@
-FROM python:3.10-alpine
+FROM python:3.12-slim
 
 WORKDIR /app
 
 COPY . .
 
-RUN apk add --no-cache \
-    build-base \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
     cmake \
     libffi-dev \
-    musl-dev \
+    libxml2-dev \
+    libxslt-dev \
+    libpq-dev \
+    libopenblas-dev \
+    liblapack-dev \
     gcc \
     g++ \
     python3-dev \
-    py3-pip \
-    libxml2-dev \
-    libxslt-dev \
-    postgresql-dev \
-    openblas-dev \
-    freetype-dev \
-    lapack-dev
+    && rm -rf /var/lib/apt/lists/*
 
-# Upgrade pip, install NVIDIA index first, then install other dependencies
 RUN pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
