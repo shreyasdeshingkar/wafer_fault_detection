@@ -144,7 +144,7 @@ class PredictionPipeline:
 
     def save_input_files(self) -> str:
         try:
-            # creating the File 
+            # Creating the File for Saving input csv files
             pred_file_input_dir = "prediction_artifacts"
             os.makedirs(pred_file_input_dir, exist_ok=True)
 
