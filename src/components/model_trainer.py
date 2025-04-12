@@ -1,6 +1,7 @@
 import os
 import sys
 from dataclasses import dataclass
+import numpy as np
 
 from sklearn.ensemble import (
     AdaBoostClassifier,
@@ -52,11 +53,15 @@ class ModelTrainer:
             logging.info(f"Splitting training and testing input and target feature")
 
             x_train, y_train, x_test, y_test = (
-                train_array[:, :-1],
-                train_array[:, -1],
-                test_array[:, :-1],
-                test_array[:, -1],
-            )
+            train_array[:, :-1],
+            train_array[:, -1],
+            test_array[:, :-1],
+            test_array[:, -1],
+        )
+
+            # Convert -1 to 0
+            y_train = np.where(y_train == -1, 0, y_train)
+            y_test = np.where(y_test == -1, 0, y_test)
 
             models = {
                 "Random Forest": RandomForestClassifier(),
@@ -107,11 +112,11 @@ class ModelTrainer:
 
             r2_square = r2_score(y_test, predicted)
 
-            upload_file(
-                from_filename=self.model_trainer_config.trained_model_file_path,
-                to_filename="model.pkl",
-                bucket_name=AWS_S3_BUCKET_NAME,
-            )
+            # upload_file(
+            #     from_filename=self.model_trainer_config.trained_model_file_path,
+            #     to_filename="model.pkl",
+            #     bucket_name=AWS_S3_BUCKET_NAME,
+            # )
 
             return r2_square
 
