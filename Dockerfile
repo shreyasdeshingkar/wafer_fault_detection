@@ -20,3 +20,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
+
+# Expose the port Flask uses
+EXPOSE 5000
+
+# Start the Flask app
+CMD ["python3", "app.py"]
