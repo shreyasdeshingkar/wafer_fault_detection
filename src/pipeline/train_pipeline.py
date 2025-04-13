@@ -7,7 +7,6 @@ from src.exception import CustomException
 from src.utils import *
 
 
-
 class TrainPipeline:
     def __init__(self) -> None:
         

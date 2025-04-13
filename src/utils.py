@@ -12,7 +12,6 @@ from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
 from src.constant import *
 
-
 from src.exception import CustomException
 
 
@@ -60,24 +59,29 @@ def load_object(file_path):
         raise CustomException(e, sys)
 
 
+
+
 def upload_file(from_filename, to_filename, bucket_name):
     try:
+        if not os.path.exists(from_filename):
+            raise CustomException(f"File {from_filename} does not exist", sys)
+
         s3_resource = boto3.resource("s3")
-
         s3_resource.meta.client.upload_file(from_filename, bucket_name, to_filename)
-
+        print(f" Uploaded {from_filename} to s3://{bucket_name}/{to_filename}")
     except Exception as e:
         raise CustomException(e, sys)
 
 
 def download_model(bucket_name, bucket_file_name, dest_file_name):
     try:
-        s3_client = boto3.client("s3")
+        os.makedirs(os.path.dirname(dest_file_name), exist_ok=True)
 
+        s3_client = boto3.client("s3")
         s3_client.download_file(bucket_name, bucket_file_name, dest_file_name)
 
+        print(f"✅ Downloaded {bucket_file_name} to {dest_file_name}")
         return dest_file_name
-
     except Exception as e:
         raise CustomException(e, sys)
 

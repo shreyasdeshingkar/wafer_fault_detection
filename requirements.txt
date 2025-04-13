@@ -8,7 +8,6 @@ dill
 dnspython
 database-connect
 evidently
-Flask
 httptools
 imblearn
 ipykernel

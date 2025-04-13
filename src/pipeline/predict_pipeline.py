@@ -158,15 +158,15 @@ class PredictionPipeline:
 
     def predict(self, features):
         try:
-            # model_path = download_model(
-            #         bucket_name=AWS_S3_BUCKET_NAME,
-            #         bucket_file_name="model.pkl",
-            #         dest_file_name="model.pkl",
-            #     )
+            model_path = download_model(
+                    bucket_name=AWS_S3_BUCKET_NAME,
+                    bucket_file_name="model.pkl",
+                    dest_file_name="model.pkl",
+                )
 
-            # model = load_object(file_path=model_path)
+            model = load_object(file_path=model_path)
             # Load the model locally instead of downloading from S3
-            model = load_object(file_path="artifacts/model.pkl")
+            # model = load_object(file_path="artifacts/model.pkl")
             preds = model.predict(features)
             return preds
         except Exception as e:

@@ -112,11 +112,11 @@ class ModelTrainer:
 
             r2_square = r2_score(y_test, predicted)
 
-            # upload_file(
-            #     from_filename=self.model_trainer_config.trained_model_file_path,
-            #     to_filename="model.pkl",
-            #     bucket_name=AWS_S3_BUCKET_NAME,
-            # )
+            upload_file(
+                from_filename=self.model_trainer_config.trained_model_file_path,
+                to_filename="model.pkl",
+                bucket_name=AWS_S3_BUCKET_NAME,
+            )
 
             return r2_square
 
