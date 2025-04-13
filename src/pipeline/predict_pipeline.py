@@ -138,7 +138,7 @@ class PredictionFileDetailConfig:
     prediction_file_path: str = os.path.join(prediction_output_dirname, prediction_file_name)
 
 class PredictionPipeline:
-    def __init__(self, request: request):
+    def __init__(self, request: request): 
         self.request = request
         self.prediction_file_detail = PredictionFileDetailConfig()
 
